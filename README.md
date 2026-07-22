@@ -2,7 +2,7 @@
 
 Landing page responsiva desarrollada como prueba técnica para la posición de **UX Engineer / Maquetador Web**.
 
-El proyecto reproduce el diseño proporcionado en el mockup desktop y propone una adaptación **mobile first**, utilizando PHP para organizar la vista en componentes, Sass para estructurar los estilos y Swiper.js para el carrusel principal.
+El proyecto reproduce el diseño proporcionado en el mockup desktop y propone una adaptación **mobile first**, utilizando PHP para organizar la vista en componentes, Sass para estructurar los estilos jQuery para el comportamiento visual del header y Swiper.js para el carrusel principal.
 
 ## Tecnologías utilizadas
 
@@ -13,6 +13,7 @@ El proyecto reproduce el diseño proporcionado en el mockup desktop y propone un
 - JavaScript
 - Swiper.js 11
 - Node.js y npm
+- jQuery 4.0.0 Slim
 - Git
 - GitHub Actions
 - GitHub Pages
@@ -236,6 +237,16 @@ src/scss/main.scss
 ```
 
 Sass genera el CSS final utilizado por el navegador.
+
+## Uso de jQuery
+
+jQuery se utiliza para controlar el comportamiento visual del header durante el desplazamiento de la página.
+
+Al detectar que el usuario ha realizado scroll, se agrega dinámicamente la clase:
+
+```text
+site-header--scrolled
+```
 
 ## Diseño responsivo
 
