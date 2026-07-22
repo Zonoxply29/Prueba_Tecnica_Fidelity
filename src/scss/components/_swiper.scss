@@ -1,0 +1,112 @@
+.hero-slider {
+  width: 100%;
+  overflow: hidden;
+  background-color: #808080;
+}
+
+.hero-slider__swiper {
+  position: relative;
+  width: 100%;
+}
+
+.hero-slider__swiper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.18);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.hero-slider .swiper-slide {
+  display: flex;
+  width: 100%;
+}
+
+.hero-slider__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1920 / 850;
+  object-fit: cover;
+}
+
+.hero-slider .swiper-button-prev,
+.hero-slider .swiper-button-next {
+  width: 2.5rem;
+  height: 2.5rem;
+  color: var(--color-white);
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  appearance: none;
+  cursor: pointer;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.45));
+  
+  opacity: 0.9;
+  z-index: 2;
+  transition:
+    opacity var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.hero-slider .swiper-button-prev::after,
+.hero-slider .swiper-button-next::after {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.hero-slider .swiper-button-prev:hover,
+.hero-slider .swiper-button-next:hover {
+  opacity: 1;
+  transform: scale(1.08);
+}
+
+.hero-slider .swiper-pagination {
+  bottom: 1rem;
+  z-index: 2;
+}
+
+.hero-slider .swiper-pagination-bullet {
+  width: 1.75rem;
+  height: 0.25rem;
+  margin-inline: 0.25rem;
+  border-radius: 0;
+  background-color: var(--color-white);
+  opacity: 0.65;
+}
+
+.hero-slider .swiper-pagination-bullet-active {
+  opacity: 1;
+}
+
+@media (max-width: 767px) {
+  .hero-slider .swiper-button-prev,
+  .hero-slider .swiper-button-next {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .hero-slider .swiper-button-prev {
+    left: 0.25rem;
+  }
+
+  .hero-slider .swiper-button-next {
+    right: 0.25rem;
+  }
+
+  .hero-slider .swiper-button-prev::after,
+  .hero-slider .swiper-button-next::after {
+    font-size: 1.1rem;
+  }
+
+  .hero-slider .swiper-pagination {
+    bottom: 0.4rem;
+  }
+
+  .hero-slider .swiper-pagination-bullet {
+    width: 1.1rem;
+    height: 0.18rem;
+  }
+}

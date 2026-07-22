@@ -1,0 +1,25 @@
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+
+:root {
+  --color-brand: #eb1c23;
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-text: #111111;
+  --color-muted: #747474;
+  --color-background: #f2f2f2;
+  --color-action: #f18700;
+
+  --container-width: 1024px;
+
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+
+  --card-radius: 24px;
+
+  --transition-fast: 200ms ease;
+  --transition-normal: 300ms ease;
+}

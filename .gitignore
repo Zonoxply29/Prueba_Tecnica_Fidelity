@@ -1,0 +1,8 @@
+node_modules/
+dist/
+
+src/css/*.css
+src/css/*.css.map
+
+.DS_Store
+Thumbs.db

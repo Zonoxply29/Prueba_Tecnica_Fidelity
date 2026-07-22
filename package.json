@@ -1,0 +1,11 @@
+{
+  "devDependencies": {
+    "sass": "^1.101.3"
+  },
+  "scripts": {
+  "dev:php": "php -S 127.0.0.1:8000 -t src",
+  "dev:sass": "sass --watch src/scss/main.scss:src/css/main.css --style=expanded --source-map",
+  "build": "node scripts/build.mjs",
+  "preview": "php -S 127.0.0.1:8080 -t dist"
+}
+}

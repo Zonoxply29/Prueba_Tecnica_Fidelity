@@ -1,0 +1,207 @@
+.reward-card {
+    position: relative;
+    isolation: isolate;
+
+    display: flex;
+    flex-direction: column;
+
+    width: min(100%, 20.375rem);
+    min-height: 28.5rem;
+    overflow: hidden;
+
+    background-color: var(--color-white);
+    border-radius: var(--card-radius);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+
+    transition:
+        box-shadow var(--transition-normal),
+        transform var(--transition-normal);
+}
+
+.reward-card__content {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 1.5rem 1.5rem 1.35rem;
+
+    transition:
+        opacity var(--transition-normal),
+        filter var(--transition-normal);
+}
+
+.reward-card__media {
+    display: grid;
+    place-items: center;
+
+    width: 100%;
+    height: 16.75rem;
+    margin-bottom: 1.25rem;
+    overflow: hidden;
+}
+
+.reward-card__image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.reward-card--playstation .reward-card__media {
+    position: relative;
+    overflow: hidden;
+    border-radius: 1.25rem;
+}
+
+.reward-card--playstation .reward-card__image {
+    position: absolute;
+    top: -22%;
+    left: 0;
+
+    width: 100%;
+    height: auto;
+    max-width: none;
+
+    object-fit: initial;
+    border-radius: 0;
+}
+
+.reward-card--ck .reward-card__image {
+    width: 90%;
+    height: 90%;
+}
+
+.reward-card--starbucks .reward-card__image {
+    width: 94%;
+    height: 94%;
+}
+
+.reward-card__title {
+    max-width: 17rem;
+    min-height: 3rem;
+    margin: 0;
+
+    color: var(--color-text);
+    font-size: 1.15rem;
+    font-weight: 400;
+    line-height: 1.25;
+    text-align: center;
+}
+
+.reward-card__points {
+    margin: auto 0 0.1rem;
+
+    color: var(--color-black);
+    font-size: 1.18rem;
+    font-weight: 800;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.reward-card__overlay {
+    position: absolute;
+    z-index: 2;
+    inset: 0;
+
+    display: grid;
+    place-items: center;
+
+    padding: 1.5rem;
+
+    background-color: rgba(255, 255, 255, 0.64);
+    border-radius: inherit;
+
+    opacity: 0;
+    pointer-events: none;
+
+    transition: opacity var(--transition-normal);
+}
+
+.reward-card__button {
+    min-width: 10.5rem;
+    min-height: 3.9rem;
+    padding: 0.9rem 1.5rem;
+
+    color: var(--color-white);
+    background-color: var(--color-action);
+    border: 0;
+    border-radius: 1rem;
+
+    font-size: 1.2rem;
+    font-weight: 800;
+    line-height: 1;
+    text-transform: uppercase;
+
+    cursor: pointer;
+    pointer-events: auto;
+
+    transition:
+        background-color var(--transition-fast),
+        transform var(--transition-fast),
+        box-shadow var(--transition-fast);
+}
+
+.reward-card__button:hover {
+    background-color: #dd7900;
+    box-shadow: 0 6px 15px rgba(221, 121, 0, 0.32);
+    transform: translateY(-2px);
+}
+
+.reward-card__button:focus-visible {
+    outline: 3px solid rgba(0, 0, 0, 0.75);
+    outline-offset: 4px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+
+    .reward-card:hover,
+    .reward-card:focus-within {
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+        transform: translateY(-3px);
+    }
+
+    .reward-card:hover .reward-card__content,
+    .reward-card:focus-within .reward-card__content {
+        filter: grayscale(1);
+        opacity: 0.62;
+    }
+
+    .reward-card:hover .reward-card__overlay,
+    .reward-card:focus-within .reward-card__overlay {
+        opacity: 1;
+    }
+}
+
+@media (hover: none),
+(pointer: coarse) {
+    .reward-card {
+        min-height: auto;
+    }
+
+    .reward-card__overlay {
+        position: static;
+
+        padding: 0 1.5rem 1.5rem;
+
+        background-color: transparent;
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .reward-card__button {
+        width: 100%;
+        min-height: 3.25rem;
+        border-radius: 0.875rem;
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .reward-card__content {
+        padding: 1.5rem 1.5rem 1.35rem;
+    }
+
+    .reward-card__media {
+        height: 17.25rem;
+    }
+}

@@ -1,0 +1,26 @@
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  width: 100%;
+  background-color: var(--color-brand);
+
+  box-shadow: none;
+  transition: box-shadow var(--transition-fast);
+}
+
+.site-header--scrolled {
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.22);
+}
+
+.site-header__picture {
+  display: block;
+  width: 100%;
+}
+
+.site-header__image {
+  display: block;
+  width: 100%;
+  height: auto;
+}

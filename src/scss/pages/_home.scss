@@ -1,0 +1,56 @@
+.rewards {
+  padding-block: 2.75rem 3.75rem;
+  background-color: var(--color-background);
+}
+
+.rewards__title {
+  margin: 0 0 2rem;
+  color: var(--color-black);
+  font-size: clamp(1.65rem, 5vw, 2.15rem);
+  font-weight: 800;
+  line-height: 1.15;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.rewards__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  justify-items: center;
+}
+
+@media (min-width: 700px) {
+  .rewards {
+    padding-block: 3rem 4rem;
+  }
+
+  .rewards__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .rewards__grid .reward-card:last-child {
+    grid-column: 1 / -1;
+    width: min(100%, 20.375rem);
+  }
+}
+
+@media (min-width: 1024px) {
+  .rewards {
+    padding-block: 3.25rem 4.5rem;
+  }
+
+  .rewards__title {
+    margin-bottom: 2.5rem;
+  }
+
+  .rewards__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.375rem;
+  }
+
+  .rewards__grid .reward-card:last-child {
+    grid-column: auto;
+    width: 100%;
+  }
+}
