@@ -32,20 +32,38 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   });
 });
+// Implementacion Header con Jquery
+$(function () {
+  const $header = $(".site-header");
 
-const header = document.querySelector(".site-header");
+  if (!$header.length) {
+    return;
+  }
 
-if (header) {
+  let ticking = false;
+
   const updateHeaderState = () => {
-    header.classList.toggle(
+    const isScrolled = $(window).scrollTop() > 10;
+
+    $header.toggleClass(
       "site-header--scrolled",
-      window.scrollY > 10,
+      isScrolled,
     );
+
+    ticking = false;
   };
 
   updateHeaderState();
 
-  window.addEventListener("scroll", updateHeaderState, {
-    passive: true,
+  $(window).on("scroll", () => {
+    if (ticking) {
+      return;
+    }
+
+    ticking = true;
+
+    window.requestAnimationFrame(
+      updateHeaderState,
+    );
   });
-}
+});

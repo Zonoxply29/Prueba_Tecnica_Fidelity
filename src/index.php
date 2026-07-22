@@ -68,6 +68,7 @@ $rewards = [
     <?php require __DIR__ . '/partials/footer.php'; ?>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-4.0.0.slim.min.js"></script>
     <script src="js/main.js"></script>
 </body>
 
